@@ -1,15 +1,19 @@
+// Get Element by ID helper function
 function $(id) {
     return document.getElementById(id);
 }
 
+// Query Selector helper function
 function qs(selector) {
     return document.querySelector(selector);
 }
 
+// Query Selector All helper function
 function qsa(selector) {
     return document.querySelectorAll(selector);
 }
 
+// Given the cookie ate, calculates the full progress bar percentage
 function calculateHunger(cookie) {
     const fullBar = qs('.full-bar');
     let fullPercentage = fullBar.clientWidth / fullBar.parentNode.clientWidth * 100.0;
