@@ -1,3 +1,4 @@
+// Types of cookies and how much they fill up cookie monster
 const cookies ={
     burnt: -20,
     broccoli: -10,
@@ -7,13 +8,17 @@ const cookies ={
     fudge: 2
 }
 
-let selectedCookie = 'burnt';
+let selectedCookie = 'burnt'; // Cookie that is selected
 
+// Code that is run when html/window page is loaded
 window.addEventListener('load', () => {
 
+    // DOM elements/Variables needed
     const dropdownMenu = qs('select');
+    const cookieJar = qs('#jar-container img');
+    const cookieTypes = Object.keys(cookies);
 
-    Object.keys(cookies).forEach((cookie) => {
+    cookieTypes.forEach((cookie) => {
         let option = document.createElement('option');
         option.value = cookie;
         option.textContent = cookie;
@@ -24,11 +29,10 @@ window.addEventListener('load', () => {
         selectedCookie = dropdownMenu.value;
     });
 
-    const cookieJar = qs('#jar-container img');
     cookieJar.addEventListener('click', generateCookie);
-
 });
 
+// Generates a cookie with selected type of cookie
 function generateCookie() {
     const cookie = document.createElement('img');
     cookie.classList.add('cookie');
@@ -41,11 +45,12 @@ function generateCookie() {
     cookieContainer.append(cookie);
 }
 
-function monsterEat(event) {
+// On click callback function where monster eats given cookie
+function monsterEat(cookie) {
     const cookieContainer = qs('#cookie-container');
-    const cookie = event.target;
-    cookieContainer.removeChild(cookie);
+    const cookieObject = cookie.target;
+    cookieContainer.removeChild(cookieObject);
 
     const fullBar = qs('.full-bar');
-    fullBar.style.width = calculateHunger(cookie);
+    fullBar.style.width = calculateHunger(cookieObject);
 }
