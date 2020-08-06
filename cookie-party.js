@@ -18,6 +18,12 @@ window.addEventListener('load', () => {
     const cookieJar = qs('#jar-container img');
     const cookieTypes = Object.keys(cookies);
 
+    // TODO Step 2.1: Generate dropdown options below
+
+    // TODO Step 2.2: Add an on change event listener for the dropdown menu
+
+    // TODO Step 3.1: Add an on click event listener for the cookie jar
+
     cookieTypes.forEach((cookie) => {
         let option = document.createElement('option');
         option.value = cookie;
@@ -33,6 +39,8 @@ window.addEventListener('load', () => {
 });
 
 // Generates a cookie with selected type of cookie
+// TODO Step 3.2: Generates a cookie with selected type of cookie
+// Hint: this is where the code for Step 4.2 should be placed also!
 function generateCookie() {
     const cookie = document.createElement('img');
     cookie.classList.add('cookie');
@@ -46,6 +54,7 @@ function generateCookie() {
 }
 
 // On click callback function where monster eats given cookie
+// TODO Step 4.1: On click callback function where monster eats given cookie 
 function monsterEat(cookie) {
     const cookieContainer = qs('#cookie-container');
     const cookieObject = cookie.target;
