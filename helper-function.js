@@ -15,7 +15,7 @@ function qsa(selector) {
 
 // Given the cookie ate, calculates the full progress bar percentage
 function calculateHunger(cookie) {
-    const fullBar = qs('.full-bar');
+    const fullBar = qs('#full-meter div');
     let fullPercentage = fullBar.clientWidth / fullBar.parentNode.clientWidth * 100.0;
     if (cookie.classList.contains('burnt')) {
         fullPercentage = Math.max(0, fullPercentage + cookies.burnt);

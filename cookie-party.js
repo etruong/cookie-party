@@ -10,13 +10,14 @@
 //       - is an img tag
 //       - alt attribute containing the type of cookie it is
 //       - contains the class cookie
+//       - contains the src of the selectedTypeCookie
 // 3. Create a function called monsterEat that contains a parameter called cookie
 //    that is the target cookie that cookie monster will eat that does the
 //    following:
 //       - removes the cookie from the plate
-//       - calls calculateHunger function (found in the helper-function.js) passing
-//         in the cookie that is to be removed this should adjust the health bar depending
-//         on the cookie passed in
+//       - calls and assigns the value returned from the 
+//         calculateHunger function (found in the helper-function.js) passing
+//         in the cookie that is to be removed the width of the full meter
 
 // Types of cookies and how much they fill up cookie monster
 const cookies ={
